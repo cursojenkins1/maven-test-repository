@@ -13,7 +13,8 @@ pipeline {
 
 node {
   stage('Compile') {
-    echo 'Comienza la compilación' 
+    echo 'Comienza la compilación'
+    compile
   }
   stage('Test') {
     echo 'Comienzan las pruebas' 
