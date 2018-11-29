@@ -1,3 +1,4 @@
+/*
 pipeline {
   agent any
   stages {
@@ -6,5 +7,12 @@ pipeline {
         echo 'Hello World'
       }
     }
+  }
+}
+*/
+
+node {
+  stage('Build') {
+    echo 'Hello World' 
   }
 }
