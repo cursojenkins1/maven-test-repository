@@ -13,6 +13,6 @@ pipeline {
 
 node {
   stage('Build') {
-    echo 'Hello World' 
+    echo 'Hello World!' 
   }
 }
