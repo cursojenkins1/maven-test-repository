@@ -12,7 +12,13 @@ pipeline {
 */
 
 node {
-  stage('Build') {
-    echo 'Bye World!' 
+  stage('Compile') {
+    echo 'Comienza la compilación' 
+  }
+  stage('Test') {
+    echo 'Comienzan las pruebas' 
+  }
+  stage('Package') {
+    echo 'Comienzan el empaquetado' 
   }
 }
