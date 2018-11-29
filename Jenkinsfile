@@ -20,7 +20,6 @@ node {
     ) {
       sh 'mvn compile' 
     }
-    mvn compile
   }
   stage('Test') {
     echo 'Comienzan las pruebas' 
