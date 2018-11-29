@@ -14,7 +14,7 @@ pipeline {
 node {
   stage('Compile') {
     echo 'Comienza la compilación'
-    compile
+    mvn compile
   }
   stage('Test') {
     echo 'Comienzan las pruebas' 
