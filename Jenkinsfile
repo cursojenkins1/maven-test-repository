@@ -19,6 +19,6 @@ node {
     echo 'Comienzan las pruebas' 
   }
   stage('Package') {
-    echo 'Comienzan el empaquetado' 
+    echo 'Comienza el empaquetado' 
   }
 }
