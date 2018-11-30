@@ -83,7 +83,7 @@ node {
 node {
     try {
         stage('Test') {
-            sh 'echo "Fallo!"; exit 1'
+            sh 'echo "Fallo!"; exit 0'
         }
         echo 'Se ejecuta si exito'
     } catch (e) {
