@@ -1,16 +1,36 @@
-/*
 pipeline {
   agent any
   stages {
-    stage('Etapa 1') {
+    stage('Compile') {
       steps {
-        echo 'Hello World'
+        echo 'Comienza la compilación'
+        withMaven(
+          maven:'Maven por defecto (3.6.0)'  
+        ) {
+          sh 'mvn compile' 
+        }
+      }
+    }
+    stage('Test') {
+      echo 'Comienzan las pruebas'
+      withMaven(
+        maven:'Maven por defecto (3.6.0)'  
+      ) {
+        sh 'mvn test'
+      }
+    }
+    stage('Package') {
+      echo 'Comienza el empaquetado'
+      withMaven(
+        maven:'Maven por defecto (3.6.0)'  
+      ) {
+        sh 'mvn package'
       }
     }
   }
 }
-*/
 
+/*
 node {
   checkout scm
   stage('Compile') {
@@ -27,7 +47,6 @@ node {
       //maven:'Maven por defecto (3.6.0)'  
     //) {
       sh 'mvn test'
-      junit '**/*.xml'
     //}
   }
   stage('Package') {
@@ -39,3 +58,4 @@ node {
     //}
   }
 }
+*/
