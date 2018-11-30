@@ -12,19 +12,23 @@ pipeline {
       }
     }
     stage('Test') {
-      echo 'Comienzan las pruebas'
-      withMaven(
-        maven:'Maven por defecto (3.6.0)'  
-      ) {
-        sh 'mvn test'
+      steps{
+        echo 'Comienzan las pruebas'
+        withMaven(
+          maven:'Maven por defecto (3.6.0)'  
+        ) {
+          sh 'mvn test'
+        }
       }
     }
     stage('Package') {
-      echo 'Comienza el empaquetado'
-      withMaven(
-        maven:'Maven por defecto (3.6.0)'  
-      ) {
-        sh 'mvn package'
+      steps {
+        echo 'Comienza el empaquetado'
+        withMaven(
+          maven:'Maven por defecto (3.6.0)'  
+        ) {
+          sh 'mvn package'
+        }
       }
     }
   }
