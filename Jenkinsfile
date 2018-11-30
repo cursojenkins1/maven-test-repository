@@ -24,10 +24,15 @@ pipeline {
     stage('Package') {
       steps {
         echo 'Comienza el empaquetado'
-        withMaven(
-          maven:'Maven por defecto (3.6.0)'  
-        ) {
-          sh 'mvn package'
+        try {
+          withMaven(
+            maven:'Maven por defecto (3.6.0)'  
+          ) {
+            sh 'mvn package'
+          }
+        }
+        finally {
+          deleteDirectory() 
         }
       }
     }
