@@ -26,7 +26,8 @@ node {
     //withMaven(
       //maven:'Maven por defecto (3.6.0)'  
     //) {
-      sh 'mvn test' 
+      sh 'mvn test'
+      junit '**/*.xml'
     //}
   }
   stage('Package') {
