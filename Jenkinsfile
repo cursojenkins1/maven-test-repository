@@ -29,8 +29,21 @@ pipeline {
           ) {
             sh 'mvn package'
           }
-          deleteDir() 
       }
+    }
+  }
+  post {
+    always {
+      deleteDir() 
+    }
+    failure {
+      echo 'Error'
+    }
+    success {
+      echo 'Éxito'
+    }
+    changed {
+      echo 'Cambio'
     }
   }
 }
