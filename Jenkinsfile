@@ -80,6 +80,7 @@ node {
 }
 */
 
+/*
 node {
     try {
         stage('Test') {
@@ -103,3 +104,4 @@ node {
         echo 'Se ejecuta siempre'
     }
 }
+*/
